@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Cucumber Test Project</title>
+        <style>
+            html {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            h1 {
+                font-weight: normal;
+            }
+            .hidden {
+                display: none;
+            }
+            .dummy,
+            .show-hide {
+                border: 0;
+                background: none;
+                background: lightgreen;
+                padding: 1rem;
+                margin: 1rem;
+                font-size: 1rem;
+                outline: none;
+                cursor: pointer;
+                width: 8rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Test Page</h1>
+        <div>
+            <button class="show-hide">SHOW</button>
+            <button class="dummy" disabled>DUMMY</button>
+        </div>
+        <p class="text hidden">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id est impedit necessitatibus ducimus atque saepe assumenda ea consectetur dolore dolorem inventore, eius praesentium tempore laboriosam temporibus quod cupiditate officiis ullam?
+        </p>
+        <script>
+            var showHideBtn = document.querySelector('.show-hide');
+            var text = document.querySelector('.text');
+
+            showHideBtn.addEventListener('click', () => {
+                text.classList.toggle('hidden');
+                var isHidden = text.classList.contains('hidden');
+                showHideBtn.innerHTML = isHidden ? 'SHOW' : 'HIDE';
+            });
+        </script>
+    </body>
+</html>
